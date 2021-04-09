@@ -97,58 +97,28 @@ net.createServer(socket => {
 
 ### api
 
-#### `lt_donthave([metadata])`
+#### `lt_donthave()`
 
-Initialize the extension. If you have the torrent metadata (Buffer), pass it into the
-`lt_donthave` constructor so it's made available to the peer.
-
-```js
-const metadata = fs.readFileSync(__dirname + '/file.torrent')
-wire.use(lt_donthave(metadata))
-```
-
-#### `lt_donthave.fetch()`
-
-Ask the peer to send metadata.
-
-#### `lt_donthave.cancel()`
-
-Stop asking the peer to send metadata.
-
-#### `lt_donthave.setMetadata(metadata)`
-
-Set the metadata. If you didn't have the metadata at the time `lt_donthave` was
-initialized, but you end up getting it from another peer (or somewhere else), you should
-call `setMetadata` so the metadata will be available to the peer.
-
-#### `lt_donthave.on('metadata', function (metadata) {})`
-
-Fired when metadata is available and verified to be correct. Called with a single
-parameter of type Buffer.
+Initialize the extension.
 
 ```js
-wire.lt_donthave.on('metadata', metadata => {
-  console.log(Buffer.isBuffer(metadata)) // true
-})
+wire.use(lt_donthave())
 ```
 
-Note: the event will not fire if the peer does not support lt_donthave, if they
-don't have metadata yet either, if they repeatedly send invalid data, or if they
-simply don't respond.
+#### `lt_donthave.donthave(index)`
 
-#### `lt_donthave.on('warning', function (err) {})`
+Tell the remote peer that this peer no longer has the piece with the specified `index`.
 
-Fired if:
- - the peer does not support lt_donthave
- - the peer doesn't have metadata yet
- - the peer repeatedly sent invalid data
+Opposite of `wire.have`.
 
-```js
-wire.lt_donthave.on('warning', err => {
-  console.log(err.message)
-})
-```
+#### `lt_donthave.on('donthave', index => {})`
+
+Fired when the remote peer no longer has the piece with the specified `index`.
+
+Opposite of `wire.on('have', index => ())`
+
+After this is fired, all outstanding requests to the remote peer for that piece will automatically fail.
 
 ### license
 
-MIT. Copyright (c) [Feross Aboukhadijeh](https://feross.org) and [WebTorrent, LLC](https://webtorrent.io).
+MIT. Copyright (c) John Hiesey and [WebTorrent, LLC](https://webtorrent.io).
