@@ -1,6 +1,6 @@
 # lt_donthave [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
 
-[travis-url]: https://travis-ci.org/webtorrent/lt_donthave
+[ci-url]: https://github.com/webtorrent/lt_donthave/actions
 [npm-image]: https://img.shields.io/npm/v/lt_donthave.svg
 [npm-url]: https://npmjs.org/package/lt_donthave
 [downloads-image]: https://img.shields.io/npm/dm/lt_donthave.svg
