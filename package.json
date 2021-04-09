@@ -1,7 +1,7 @@
 {
   "name": "lt_donthave",
   "description": "The BitTorrent lt_donthave extension (BEP 54)",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "WebTorrent LLC",
     "email": "feross@webtorrent.io",
