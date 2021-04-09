@@ -18,7 +18,7 @@ test('wire.use(ltDontHave())', t => {
 })
 
 test('donthave sent over the wire', t => {
-  t.plan(2)
+  t.plan(3)
 
   const wire1 = new Protocol()
   wire1.peerPieces.set(30, true)
@@ -41,6 +41,7 @@ test('donthave sent over the wire', t => {
 
   wire1.lt_donthave.on('donthave', (index) => {
     t.equal(index, 30)
+    t.notOk(wire1.peerPieces.get(30), 'piece 30 cleared in bitfield')
   })
 
   wire1.handshake(leaves.parsedTorrent.infoHash, id1)
@@ -75,7 +76,7 @@ test('donthave ignored for pieces the peer doesn\'t already have', t => {
 })
 
 test('donthave works bidirectionally', t => {
-  t.plan(4)
+  t.plan(6)
 
   const wire1 = new Protocol()
   wire1.peerPieces.set(30, true)
@@ -106,17 +107,19 @@ test('donthave works bidirectionally', t => {
 
   wire1.lt_donthave.on('donthave', (index) => {
     t.equal(index, 30)
+    t.notOk(wire1.peerPieces.get(30), 'piece 30 cleared in bitfield')
   })
 
   wire2.lt_donthave.on('donthave', (index) => {
     t.equal(index, 20)
+    t.notOk(wire2.peerPieces.get(20), 'piece 20 cleared in bitfield')
   })
 
   wire1.handshake(leaves.parsedTorrent.infoHash, id1)
 })
 
 test('requests fail when matching donthave arrives', t => {
-  t.plan(4)
+  t.plan(5)
 
   const wire1 = new Protocol()
   const wire2 = new Protocol()
@@ -138,6 +141,7 @@ test('requests fail when matching donthave arrives', t => {
     })
     wire1.request(30, 0, 16384, (err) => {
       t.ok(err, 'piece 30 failed as expected')
+      t.notOk(wire1.peerPieces.get(30), 'piece 30 cleared in bitfield')
     })
   })
 

@@ -3,7 +3,7 @@ const arrayRemove = require('unordered-array-remove')
 const { EventEmitter } = require('events')
 const debug = require('debug')('lt_donthave')
 
-module.exports = metadata => {
+module.exports = () => {
   class ltDontHave extends EventEmitter {
     constructor (wire) {
       super()
