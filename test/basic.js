@@ -137,10 +137,10 @@ test('requests fail when matching donthave arrives', t => {
 
   wire1.on('unchoke', () => {
     wire1.request(20, 0, 16384, (err) => {
-      t.notOk(err, 'piece 20 succeeded as expected')
+      t.error(err, 'piece 20 succeeded as expected')
     })
     wire1.request(30, 0, 16384, (err) => {
-      t.ok(err, 'piece 30 failed as expected')
+      t.ok(err instanceof Error, 'piece 30 failed as expected')
       t.notOk(wire1.peerPieces.get(30), 'piece 30 cleared in bitfield')
     })
   })
@@ -152,6 +152,7 @@ test('requests fail when matching donthave arrives', t => {
     } else if (pieceIndex === 30) {
       t.pass('got request for piece 30')
       wire2.lt_donthave.donthave(30)
+      // intentionally not calling `onChunk`
     } else {
       t.fail('got request for unexpected piece')
     }

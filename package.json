@@ -22,7 +22,6 @@
     "webtorrent-fixtures": "^1.7.3"
   },
   "keywords": [
-    "Extension which allows a peer to advertise that it no longer has a piece",
     "bep",
     "bep 54",
     "bep_0054",
