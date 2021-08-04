@@ -15,7 +15,7 @@
     "unordered-array-remove": "^1.0.2"
   },
   "devDependencies": {
-    "bittorrent-protocol": "3.4.2",
+    "bittorrent-protocol": "3.4.3",
     "brfs": "2.0.2",
     "standard": "*",
     "tape": "5.3.0",
