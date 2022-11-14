@@ -29,9 +29,9 @@ This package should be used with [bittorrent-protocol](https://www.npmjs.com/pac
 Say you're already using `bittorrent-protocol`. Your code might look something like this:
 
 ```js
-const BitField = require('bitfield')
-const Protocol = require('bittorrent-protocol')
-const net = require('net')
+import BitField from 'bitfield'
+import Protocol from 'bittorrent-protocol'
+import net from 'net'
 
 net.createServer(socket => {
   var wire = new Protocol()
@@ -55,10 +55,10 @@ net.createServer(socket => {
 To add support for BEP 54, simply modify your code like this:
 
 ```js
-const BitField = require('bitfield')
-const Protocol = require('bittorrent-protocol')
-const net = require('net')
-const lt_donthave = require('lt_donthave')
+import BitField from 'bitfield'
+import Protocol from 'bittorrent-protocol'
+import net from 'net'
+import lt_donthave from 'lt_donthave'
 
 net.createServer(socket => {
   const wire = new Protocol()

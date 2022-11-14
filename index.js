@@ -1,9 +1,11 @@
 /*! lt_donthave. MIT License. WebTorrent LLC <https://webtorrent.io/opensource> */
-const arrayRemove = require('unordered-array-remove')
-const { EventEmitter } = require('events')
-const debug = require('debug')('lt_donthave')
+import arrayRemove from 'unordered-array-remove'
+import { EventEmitter } from 'events'
+import debugFactory from 'debug'
 
-module.exports = () => {
+const debug = debugFactory('lt_donthave')
+
+export default () => {
   class ltDontHave extends EventEmitter {
     constructor (wire) {
       super()
