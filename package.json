@@ -10,6 +10,7 @@
   "bugs": {
     "url": "https://github.com/webtorrent/lt_donthave/issues"
   },
+  "type": "module",
   "dependencies": {
     "debug": "^4.2.0",
     "unordered-array-remove": "^1.0.2"
@@ -31,7 +32,12 @@
     "lt_donthave"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "engines": {
+    "node": ">=12.20.0"
+  },
+  "exports": {
+    "import": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/webtorrent/lt_donthave.git"

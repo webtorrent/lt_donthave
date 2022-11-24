@@ -1,7 +1,9 @@
-const { leaves } = require('webtorrent-fixtures')
-const Protocol = require('bittorrent-protocol')
-const test = require('tape')
-const ltDontHave = require('../')
+import fixtures from 'webtorrent-fixtures'
+import Protocol from 'bittorrent-protocol'
+import test from 'tape'
+import ltDontHave from '../index.js'
+
+const { leaves } = fixtures
 
 const id1 = Buffer.from('01234567890123456789')
 const id2 = Buffer.from('12345678901234567890')
