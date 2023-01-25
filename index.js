@@ -21,7 +21,8 @@ export default () => {
     onMessage (buf) {
       let index
       try {
-        index = buf.readUInt32BE()
+        const view = new DataView(buf.buffer)
+        index = view.getUint32(0)
       } catch (err) {
         // drop invalid messages
         return
@@ -39,8 +40,9 @@ export default () => {
       if (!this._peerSupports) return
 
       debug('donthave %d', index)
-      const buf = Buffer.alloc(4)
-      buf.writeUInt32BE(index)
+      const buf = new Uint8Array(4)
+      const view = new DataView(buf.buffer)
+      view.setUint32(0, index)
 
       this._wire.extended('lt_donthave', buf)
     }
