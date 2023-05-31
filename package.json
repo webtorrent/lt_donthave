@@ -16,6 +16,7 @@
     "unordered-array-remove": "^1.0.2"
   },
   "devDependencies": {
+    "@webtorrent/semantic-release-config": "^1.0.9",
     "bittorrent-protocol": "4.1.7",
     "brfs": "2.0.2",
     "standard": "*",
@@ -63,5 +64,8 @@
     "extends": [
       "github>webtorrent/renovate-config"
     ]
+  },
+  "release": {
+    "extends": "@webtorrent/semantic-release-config"
   }
 }
