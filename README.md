@@ -1,5 +1,6 @@
-# lt_donthave [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
+# lt_donthave [![ci][ci-image]][ci-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
 
+[ci-image]: https://github.com/webtorrent/lt_donthave/actions/workflows/ci.yml/badge.svg?branch=master
 [ci-url]: https://github.com/webtorrent/lt_donthave/actions
 [npm-image]: https://img.shields.io/npm/v/lt_donthave.svg
 [npm-url]: https://npmjs.org/package/lt_donthave
