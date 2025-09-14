@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/webtorrent/lt_donthave/compare/v2.0.5...v2.0.6) (2025-09-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency debug to v4.4.3 ([#59](https://github.com/webtorrent/lt_donthave/issues/59)) ([c297f82](https://github.com/webtorrent/lt_donthave/commit/c297f8241f425f794bbaffdeb09369d3242c62f4))
+
 ## [2.0.5](https://github.com/webtorrent/lt_donthave/compare/v2.0.4...v2.0.5) (2025-05-15)
 
 
