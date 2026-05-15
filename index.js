@@ -21,7 +21,7 @@ export default () => {
     onMessage (buf) {
       let index
       try {
-        const view = new DataView(buf.buffer)
+        const view = new DataView(buf.buffer, buf.byteOffset, buf.byteLength)
         index = view.getUint32(0)
       } catch (err) {
         // drop invalid messages
