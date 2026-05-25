@@ -1,3 +1,10 @@
+## [2.0.7](https://github.com/webtorrent/lt_donthave/compare/v2.0.6...v2.0.7) (2026-05-25)
+
+
+### Bug Fixes
+
+* message serialization ([#73](https://github.com/webtorrent/lt_donthave/issues/73)) ([9bb0211](https://github.com/webtorrent/lt_donthave/commit/9bb021125ea1f77c26e2d69882f0fec33eb37872))
+
 ## [2.0.6](https://github.com/webtorrent/lt_donthave/compare/v2.0.5...v2.0.6) (2025-09-14)
 
 
