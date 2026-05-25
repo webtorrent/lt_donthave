@@ -17,11 +17,11 @@
   },
   "devDependencies": {
     "@webtorrent/semantic-release-config": "^1.0.9",
-    "bittorrent-protocol": "5.0.2",
+    "bittorrent-protocol": "5.0.3",
     "brfs": "2.0.2",
     "standard": "*",
     "tape": "5.9.0",
-    "webtorrent-fixtures": "2.0.2"
+    "webtorrent-fixtures": "2.0.3"
   },
   "keywords": [
     "bep",
